@@ -21,11 +21,11 @@
 # definition file).
 #
 
-# inherit MI 6X EvolutionX device config
+# inherit MI 6X Resurrection Remix device config
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_wayne.mk
+    $(LOCAL_DIR)/rr_wayne.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_wayne-eng \
-    aosp_wayne-userdebug \
-	aosp_wayne-user
+    rr_wayne-eng \
+    rr_wayne-userdebug \
+    rr_wayne-user

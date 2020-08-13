@@ -20,30 +20,15 @@
 # included in a build is to use PRODUCT_PACKAGES in a product
 # definition file).
 #
-#TWRP
-BUILD_TWRP := false
-
-#AOSP SU
-WITH_SU := false
-
-#Build type
-CUSTOM_BUILD_TYPE=OFFICIAL
 
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/wayne/device.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/rr/config/common_full_phone.mk)
 
 # Define first api level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
-
-#GAPPS
-TARGET_GAPPS_ARCH := arm64
-IS_PHONE := true
-TARGET_INCLUDE_WIFI_EXT := true
-TARGET_INCLUDE_STOCK_ARCORE := true
-TARGET_BOOT_ANIMATION_RES := 1080
 
 # Build Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
@@ -52,6 +37,10 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Device identifier
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := aosp_wayne
+PRODUCT_NAME := rr_wayne
 PRODUCT_DEVICE := wayne
 PRODUCT_MODEL := MI 6X
+
+# Resurrection Remix
+TARGET_FACE_UNLOCK_SUPPORTED := true
+RR_BUILDTYPE := Official
